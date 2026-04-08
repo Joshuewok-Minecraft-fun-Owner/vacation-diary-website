@@ -1,0 +1,54 @@
+.rating-box {
+  background: #A8F5D1;
+  border: 2px solid #7BE8C0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 20px 0;
+  max-width: 360px;
+}
+
+.rating-text,
+.return-text {
+  font-family: "Merriweather", serif;
+  color: #3b2f2f;
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+.star-bar {
+  --fill: 0%;
+  position: relative;
+  width: 150px;
+  height: 28px;
+  background: #e3e3e3;
+  -webkit-mask: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="28" viewBox="0 0 150 28">\
+<defs><path id="s" d="M14 1 L18 10 L28 10 L20 16 L23 26 L14 20 L5 26 L8 16 L0 10 L10 10 Z"/></defs>\
+<use href="#s" x="0"/><use href="#s" x="30"/><use href="#s" x="60"/><use href="#s" x="90"/><use href="#s" x="120"/>\
+</svg>') center / contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="28" viewBox="0 0 150 28">\
+<defs><path id="s" d="M14 1 L18 10 L28 10 L20 16 L23 26 L14 20 L5 26 L8 16 L0 10 L10 10 Z"/></defs>\
+<use href="#s" x="0"/><use href="#s" x="30"/><use href="#s" x="60"/><use href="#s" x="90"/><use href="#s" x="120"/>\
+</svg>') center / contain no-repeat;
+}
+
+.star-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: var(--fill, 0%);
+  background: linear-gradient(90deg, #FFC646, #E39A1F);
+  transition: width 0.25s ease;
+}
+
+.star-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  -webkit-mask: inherit;
+  mask: inherit;
+  border: 2px solid #7BE8C0;
+  border-radius: 4px;
+  pointer-events: none;
+}
